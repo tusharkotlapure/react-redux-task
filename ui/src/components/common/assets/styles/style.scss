@@ -1,0 +1,21 @@
+//Reset stylesheet
+@import './_reset';
+@import './mixins';
+
+/*Clear Fix
+========================================================================== */
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after {
+  clear: both;
+}
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}

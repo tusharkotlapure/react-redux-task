@@ -1,0 +1,23 @@
+{
+  "name": "react-redux-starterkit",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.2.0"
+  },
+  "config": {
+    "unsafe-perm": true
+  },
+  "scripts": {
+    "start": "cd ui/ && npm run start && cd .. && node server",
+    "prod": "npm install && cd ui/ && npm install && npm run build && cd ../server && node index.js"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "ui/node_modules"
+  ],
+  "dependencies": {
+    "aws-sdk": "^2.27.0",
+    "express": "^4.14.1"
+  },
+  "devDependencies": {}
+}

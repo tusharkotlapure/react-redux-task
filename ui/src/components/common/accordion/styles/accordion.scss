@@ -1,0 +1,85 @@
+@import "../../assets/styles/mixins";
+
+.accordion-heading {
+  cursor: pointer;
+  @include prefix(transition, all 0.3s ease-in-out);
+
+  &.active + .accordion-content {
+    max-height: 600px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  & + .accordion-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    visibility: hidden;
+    @include prefix(transition, all 0.3s ease-in-out);
+  }
+
+  h3 {
+    float: left;
+    text-align: left;
+  }
+
+  .toggleButton {
+    width: 37px;
+    height: 21px;
+    margin-right: 2px;
+    float: right;
+    position: relative;
+
+    @include bp-ipod {
+      width: 25px;
+    }
+  }
+
+  .toggleButton i {
+    width: 2px;
+    height: 25px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background: #f43232;
+    @include prefix(transition, all 0.3s ease-in-out);
+
+    @include bp-ipod {
+      height: 15px;
+    }
+
+    &.left {
+      @include prefix(transform, translate(11px, 0) rotate(-45deg));
+
+      @include bp-ipod {
+        @include prefix(transform, translate(7px, 0) rotate(-45deg));
+      }
+    }
+
+    &.right {
+      @include prefix(transform, translate(28px, 0) rotate(45deg));
+
+      @include bp-ipod {
+        @include prefix(transform, translate(17px, 0) rotate(45deg));
+      }
+    }
+  }
+
+  &.active .toggleButton i {
+    &.left {
+      @include prefix(transform, translate(28px, 0) rotate(-45deg));
+
+      @include bp-ipod {
+        @include prefix(transform, translate(17px, 0) rotate(-45deg));
+      }
+    }
+
+    &.right {
+      @include prefix(transform, translate(11px, 0) rotate(45deg));
+
+      @include bp-ipod {
+        @include prefix(transform, translate(7px, 0) rotate(45deg));
+      }
+    }
+  }
+}
